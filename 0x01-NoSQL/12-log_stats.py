@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" provides some stats about Nginx logs stored in MongoDB
+"""   script that provides some stats about Nginx logs stored in MongoDB
 """
 
 
@@ -7,7 +7,7 @@ from pymongo import MongoClient
 
 
 def log_stats():
-    """ logs stored in mongodb
+    """  stored in MongoDB
     """
     client = MongoClient('mongodb://127.0.0.1:27017')
     logs_collection = client.logs.nginx
@@ -31,4 +31,3 @@ def log_stats():
 
 if __name__ == "__main__":
     log_stats()
-    
