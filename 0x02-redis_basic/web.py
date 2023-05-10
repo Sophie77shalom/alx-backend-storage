@@ -10,7 +10,8 @@ store = redis.Redis()
 
 
 def count_url_access(method):
-    """ Decorator  """
+    """ Decorator counting 
+    Url """
     @wraps(method)
     def wrapper(url):
         cached_key = "cached:" + url
@@ -30,6 +31,6 @@ def count_url_access(method):
 
 @count_url_access
 def get_page(url: str) -> str:
-    """ Url """
+    """ HTML content of a url """
     res = requests.get(url)
     return res.text
